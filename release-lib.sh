@@ -14,14 +14,14 @@ fi
 git checkout gh-pages
 RELEASE_FOLDER=$"com/urucas/logcatio/${VERSION}/"
 if [ ! -d $RELEASE_FOLDER ]; then
-  mkdir $RELEASE_FOLDER
+  mkdir -p $RELEASE_FOLDER
 fi
 RELEASE_PATH=$"${RELEASE_FOLDER}logcatio-${VERSION}.aar"
-mv  $RELEASE_NAME $RELEASE_PATH
+mv $RELEASE_NAME $RELEASE_PATH
 MAVEN_PATH=$"com/urucas/logcatio/$MAVEN_FILE"
 mv $MAVEN_FILE $MAVEN_PATH
 git add $RELEASE_PATH
 git add $MAVEN_PATH
-git ci $RELEASE_PATH $MAVEN_PATH -m "update release"
+git ci $RELEASE_PATH $MAVEN_PATH -m "update release ${VERSION}"
 git push origin gh-pages
 git checkout master
