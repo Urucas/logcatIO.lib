@@ -16,7 +16,7 @@ public class App extends Application {
     public void onCreate() {
         super.onCreate();
         try {
-            LogcatIO.Initialize(getApplicationContext(), "http://192.168.0.11:5000");
+            LogcatIO.Initialize(getApplicationContext(), "https://logcatio-server4.herokuapp.com");
         } catch (EmptyNamespaceException e) {
             e.printStackTrace();
         } catch (NullContextException e) {
